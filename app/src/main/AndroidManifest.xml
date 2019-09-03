@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest package="com.nst.lklpay"
+          xmlns:android="http://schemas.android.com/apk/res/android"
+    >
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
+    <uses-permission android:name="android.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <!-- 1、设置打印机权限 -->
+    <uses-permission android:name="android.permission.CLOUDPOS_MID_PRINTER"/>
+    <!-- 2、访问接触式IC卡读卡设备权限 -->
+    <uses-permission android:name="android.permission.CLOUDPOS_MID_ICCARD"/>
+    <!-- 3、访问非接触IC卡读卡设备权限 -->
+    <uses-permission android:name="android.permission.CLOUDPOS_MID_RFCARD"/>
+    <!-- 4、访问磁条卡读卡器设备权限 -->
+    <uses-permission android:name="android.permission.CLOUDPOS_MID_MAGCARD"/>
+    <!-- 5、获取磁道明文接口权限 -->
+    <uses-permission android:name="android.permission.CLOUDPOS_MID_MAGCARD_GETTRACKDATA"/>
+    <!-- 6、获取磁道密文数据接口权限 -->
+    <uses-permission android:name="android.permission.CLOUDPOS_MID_MAGCARD_GETENCRYPTTRACKDATA"/>
+    <!-- 7、访问PSAM卡设备权限 -->
+    <uses-permission android:name="android.permission.CLOUDPOS_MID_PSAMCARD"/>
+    <!-- 8、访问串口设备权限 -->
+    <uses-permission android:name="android.permission.CLOUDPOS_MID_SERIALPORT"/>
+    <!-- 9、访问系统设备权限 -->
+    <uses-permission android:name="android.permission.CLOUDPOS_MID_SYSTEMDEV"/>
+    <!-- 10、访问CPU卡权限 -->
+    <uses-permission android:name="android.permission.CLOUDPOS_MID_CPUCARD"/>
+
+    <!-- 11、 访问预付费卡 EMV 设备权限 -->
+    <uses-permission android:name="android.permission.CLOUDPOS_MID_PREPAIDCARD_EMV"/>
+    <!-- 12、 访问预付费卡 PINPAD 设备权限 -->
+    <uses-permission android:name="android.permission.CLOUDPOS_MID_PREPAIDCARD_PINPAD"/>
+    <!-- 13、 访问前置摄像头设备权限 -->
+    <uses-permission android:name="android.permission.CLOUDPOS_MID_FACING_CAMERA"/>
+    <uses-permission android:name="android.permission.CLOUDPOS_MID_PREPAIDCARD_PINPAD"/>
+    <uses-permission android:name="android.permission.CLOUDPOS_MID_CASHER"/>
+
+    <application
+        android:name=".App"
+        android:allowBackup="true"
+        android:icon="@mipmap/logo_1"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/logo_1"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name="com.nst.lklpay.activities.PaymentListActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".activities.PaymentActivity"/>
+
+        <service android:name=".SocketServer"/>
+
+    </application>
+
+</manifest>
